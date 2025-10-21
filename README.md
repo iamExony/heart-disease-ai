@@ -58,7 +58,7 @@ The system allows **patients**, **clinicians**, and **administrators** to intera
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/heart-disease-ai.git
+git clone https://github.com/iamExony/heart-disease-ai.git
 cd heart-disease-ai
 
 # Create virtual environment
