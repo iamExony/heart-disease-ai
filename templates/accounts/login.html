@@ -1,0 +1,66 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CardioGuard AI - Login</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+  <script defer src="{% static 'js/login.js' %}"></script>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="logo-icon">❤️</div>
+        <h1 class="login-title">CardioGuard AI</h1>
+        <p class="login-description">
+          Advanced Heart Disease Prediction & Monitoring
+        </p>
+      </div>
+
+      <form id="loginForm" class="login-form">
+        <!-- Tabs -->
+        <div class="tabs">
+          <button type="button" class="tab active" data-role="patient">Patient</button>
+          <button type="button" class="tab" data-role="clinician">Clinician</button>
+          <button type="button" class="tab" data-role="admin">Admin</button>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="name@example.com"
+            required
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="••••••••"
+            required
+          />
+        </div>
+
+        <div class="form-footer">
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign In</button>
+
+        <p class="signup-text">
+          Don’t have an account?
+          <button type="button" class="btn-link" id="signupBtn">Sign up</button>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
