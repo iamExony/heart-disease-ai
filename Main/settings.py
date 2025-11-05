@@ -42,7 +42,20 @@ INSTALLED_APPS = [
     'django_browser_reload',
     'tailwind',
     'theme',   
+    'rest_framework',
+    'predictions',
+    'corsheaders',
+    'rest_framework.authtoken',
 ]
+# Django REST Framework auth settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
 
 TAILWIND_APP_NAME = 'theme'
 NPM_BIN_PATH = "C:\\Program Files\\nodejs\\npm.cmd"
@@ -56,9 +69,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 ROOT_URLCONF = 'Main.urls'
+
 
 TEMPLATES = [
     {
@@ -91,6 +108,9 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
+
+# Use custom user model
+AUTH_USER_MODEL = 'accounts.User'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

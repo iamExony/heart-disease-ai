@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from .api_views import RegisterView, LoginView
 
 app_name = "account"
 
 urlpatterns = [
     path("", views.home, name='home'),
     path("login/", views.login, name="login")
+    ,
+    path("api/register/", RegisterView.as_view(), name="api-register"),
+    path("api/login/", LoginView.as_view(), name="api-login"),
 ]
